@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
 """
-@author: chaco3
-
 Sugawara Tank Model
 Implemented By Juan Chacon
 Updated Gerald Corzo
@@ -9,10 +6,8 @@ Febraury 2019
 """
 import numpy as np
 import scipy.io as io
-import matplotlib.pyplot as plt
 import scipy.optimize as opt
 
-#%%
 INITIAL_STATES = [10, 10]
 INITIAL_Q = 1.0
 INITIAL_PARAM = [0.5, 0.2, 0.01, 0.1, 10.0, 20.0, 1, 1]
@@ -28,7 +23,7 @@ PARAM_BND = ((0.0, 1.1),
 			 (0.8, 1.2))
 
 
-def _step(prec, evap, st, param, extra_param):
+def step(prec, evap, st, param, extra_param):
     '''
     #this function takes the following arguments
     #I -> inputs(2)[prec, evap]
@@ -178,13 +173,3 @@ def NSE(x,y,q='def',j=2.0):
     return F
 
 
-'''
-TEsting function    
-'''
-for i in range(1000):
-    prec = np.random.uniform(0, 100)
-    evap = np.random.uniform(0, 10)
-    st = [np.random.uniform(0, 30), np.random.uniform(0, 30)]
-    param = [0.1819, 0.0412, 0.3348, 0.0448, 3.2259, 0.3800,1,1, 1]
-    extra_param = [1, 145]
-    _step(prec, evap, st, param, extra_param)
