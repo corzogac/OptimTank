@@ -1,0 +1,17 @@
+
+[:python_version < "3.2"]
+futures
+
+[pipfile]
+pipreqs
+requirementslib
+
+[pyproject]
+toml
+
+[requirements]
+pip
+pipreqs
+
+[xdg_home]
+appdirs
