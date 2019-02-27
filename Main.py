@@ -3,8 +3,9 @@ from scipy.optimize import minimize
 from bokeh.plotting import figure, output_file, show
 
 
-x= np.linespace(1,1000,1)
+x= np.linspace(1,1000,1000)
 y= np.multiply(np.random.rand(1000),x)
+
 
 #def fun_rosenbrock(x):
 #   return np.array([10 * (x[1] - x[0]**2), (1 - x[0])])
